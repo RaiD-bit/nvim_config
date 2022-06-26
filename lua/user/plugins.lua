@@ -79,6 +79,34 @@ return packer.startup(function(use)
     }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+
+  -- auto pairs
+  use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+      }
+  -- comment
+  use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- git
+  use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release' -- To use the latest release
+    }
+  use 'APZelos/blamer.nvim'
+
+  use {
+  'kyazdani42/nvim-tree.lua',
+  requires = {
+    'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  },
+    }
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
