@@ -101,6 +101,11 @@ return packer.startup(function(use)
     }
   use 'APZelos/blamer.nvim'
 
+    -- toggleterm
+    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+    require("toggleterm").setup()
+    end}
+
   use {
   'kyazdani42/nvim-tree.lua',
   requires = {
